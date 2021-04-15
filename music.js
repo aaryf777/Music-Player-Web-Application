@@ -17,7 +17,7 @@ const playMusic = () => {
     isPlaying = true;                           //Music is playing
     music.play();
     play.classList.replace("fa-play", "fa-pause");
-    currentimg.classList.toggle('anime');
+    currentimg.classList.add('anime');
 
 }
 
@@ -27,7 +27,7 @@ const pauseMusic = () => {
     isPlaying = false;                          //Music is Paused
     music.pause();
     play.classList.replace("fa-pause", "fa-play");
-    currentimg.classList.toggle('anime');
+    currentimg.classList.remove('anime');
 
 }
 
@@ -44,37 +44,33 @@ play.addEventListener('click', () => {
 
 // song playlist
 const playlist = [
+   
     {
-        name: "burjkhalifa",
-        title: "Burjkhalifa",
-        artist: "DJ Khushi",
-        image: "burjkhalifaimg"
+        name: "onmyway",
+        title: "On My Way",
+        artist: "Alen Walker",
+        image: "onmywayimg"
     },
     {
-        name: "hak",
-        title: "Humari adhoor...",
-        artist: "Arijit Singh",
-        image: "hakimg"
+        name: "seeyouagain",
+        title: "See You Again",
+        artist: "Wiz-khalifa",
+        image: "seeyouagainimg"
     },
+    {
+        name: "badguy",
+        title: "Bad Guy",
+        artist: "Billie Eilish",
+        image: "badguyimg"
+    },
+    
     {
         name: "duaa",
         title: "Duaa",
         artist: "Arijit Singh",
         image: "duaaimg"
     },
-    {
-        name: "thkn",
-        title: "Tu hai ki...",
-        artist: "Ankit Tiwari",
-        image: "thknimg"
-    },
-    {
-        name: "titliyan",
-
-        title: "Titliyan",
-        artist: "Hardy Sandhu",
-        image: "titliyanimg"
-    }
+    
 ];
 
 //Enter key pressed
@@ -100,7 +96,7 @@ loadSongs(playlist[currentSong]);                          //Calling loadSongs f
 
 //Next btton clicked
 next.addEventListener('click', () => {
-    if (currentSong === 4) {
+    if (currentSong === playlist.length-1) {
         next.disabled = true;
     }
     else {
